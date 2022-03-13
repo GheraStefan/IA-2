@@ -1,0 +1,15 @@
+{
+    "nume": "Schi",
+    "turisti": [
+      {
+        "nume": "Alin",
+        "varsta": 7,
+        "esteIncepator": true
+      },
+      {
+        "nume": "Alina",
+        "varsta": 17,
+        "esteIncepator": false
+      }
+    ]
+}
