@@ -24,9 +24,9 @@ instituție (se va alege, drept model, o organizație independenta).
 
 ## git commands
 
-*git clone <URL> (imi face conexiunea cu repo-ul de pe net)
-*git status (imi afiseaza ce am adaugat sau nu am adaugat)
-*git add * (adaug fisiere)
-*git commit -m "message" (adaug mesaj pentru fisierele adaugate deja)
-*git push (sincronizare local -> remote)
-*git pull (sincronizare local <- remote)
+* git clone <URL> (imi face conexiunea cu repo-ul de pe net)
+* git status (imi afiseaza ce am adaugat sau nu am adaugat)
+* git add * (adaug fisiere)
+* git commit -m "message" (adaug mesaj pentru fisierele adaugate deja)
+* git push (sincronizare local -> remote)
+* git pull (sincronizare local <- remote)
