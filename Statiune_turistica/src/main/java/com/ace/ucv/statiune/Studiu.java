@@ -1,31 +1,15 @@
 package com.ace.ucv.statiune;
 
-public class Studiu {
-    private int numarMonitori;
-    private Statiune statiune;
-    private int numarPartii;
-    private int numarTuristi;
-    private int numarPatinoare;
-    private int capacitateCazare;
+import java.util.List;
 
-    public Studiu(int numarMonitori, Statiune statiune, int numarPartii, int numarTuristi, int numarPatinoare, int capacitateCazare) {
-        this.numarMonitori = numarMonitori;
+public class Studiu {
+    private Statiune statiune;
+
+    public Studiu(Statiune statiune) {
         this.statiune = statiune;
-        this.numarPartii = numarPartii;
-        this.numarTuristi = numarTuristi;
-        this.numarPatinoare = numarPatinoare;
-        this.capacitateCazare = capacitateCazare;
     }
 
     public Studiu() {
-    }
-
-    public int getNumarMonitori() {
-        return numarMonitori;
-    }
-
-    public void setNumarMonitori(int numarMonitori) {
-        this.numarMonitori = numarMonitori;
     }
 
     public Statiune getStatiune() {
@@ -36,47 +20,57 @@ public class Studiu {
         this.statiune = statiune;
     }
 
-    public int getNumarPartii() {
-        return numarPartii;
+    public int getNumarMonitori() {
+        int numarMonitori = 0;
+        List<Partie> partii = statiune.getPartii();
+        // Parcurgem fiecare partie in parte si contorizam numarul total de monitori
+        for (Partie partie : partii) {
+            numarMonitori += partie.getNumarMonitori();
+        }
+        return numarMonitori;
     }
 
-    public void setNumarPartii(int numarPartii) {
-        this.numarPartii = numarPartii;
+    public int getNumarPartii() {
+        List<Partie> partii = statiune.getPartii();
+        return partii.size();
     }
 
     public int getNumarTuristi() {
+        int numarTuristi = 0;
+        List<Cazare> cazari = statiune.getCazari();
+        for (Cazare cazare : cazari) {
+            numarTuristi += cazare.getTuristi().size();
+        }
         return numarTuristi;
     }
 
-    public void setNumarTuristi(int numarTuristi) {
-        this.numarTuristi = numarTuristi;
-    }
-
     public int getNumarPatinoare() {
+        int numarPatinoare = 0;
+        List<Partie> partii = statiune.getPartii();
+        for (Partie partie : partii) {
+            numarPatinoare += partie.getNumarPatinoare();
+        }
         return numarPatinoare;
     }
 
-    public void setNumarPatinoare(int numarPatinoare) {
-        this.numarPatinoare = numarPatinoare;
-    }
-
     public int getCapacitateCazare() {
+        int capacitateCazare = 0;
+        List<Cazare> cazari = statiune.getCazari();
+        for (Cazare cazare : cazari){
+            capacitateCazare += cazare.getCapacitateCazare();
+        }
         return capacitateCazare;
-    }
-
-    public void setCapacitateCazare(int capacitateCazare) {
-        this.capacitateCazare = capacitateCazare;
     }
 
     @Override
     public String toString() {
         return "Studiu{" +
-                "numarMonitori=" + numarMonitori +
-                ", statiune=" + statiune +
-                ", numarPartii=" + numarPartii +
-                ", numarTuristi=" + numarTuristi +
-                ", numarPatinoare=" + numarPatinoare +
-                ", capacitateCazare=" + capacitateCazare +
+                "statiune=" + statiune +
+                ", numarMonitori=" + getNumarMonitori() +
+                ", numarPartii=" + getNumarPartii() +
+                ", numarTuristi=" + getNumarTuristi() +
+                ", numarPatinoare=" + getNumarPatinoare() +
+                ", capacitateCazare=" + getCapacitateCazare() +
                 '}';
     }
 }

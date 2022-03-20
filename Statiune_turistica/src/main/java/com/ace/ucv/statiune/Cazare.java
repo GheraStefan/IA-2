@@ -1,19 +1,20 @@
 package com.ace.ucv.statiune;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cazare {
-    private String tip;
-    private int capacitateCazare;
-    private List<Turist> turisti;
+    private String tip = "";
+    private int capacitateCazare = 0;
+    private List<Turist> turisti = new ArrayList<>();
 
     public Cazare() {
     }
 
-    public Cazare(String tip, int capacitateCazare) {
+    public Cazare(String tip, int capacitateCazare, List<Turist> turisti) {
         this.tip = tip;
         this.capacitateCazare = capacitateCazare;
-
+        this.turisti = turisti;
     }
 
     public String getTip() {

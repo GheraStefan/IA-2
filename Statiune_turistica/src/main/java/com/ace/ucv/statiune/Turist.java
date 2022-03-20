@@ -1,27 +1,36 @@
 package com.ace.ucv.statiune;
 
+import java.util.Scanner;
+
 public class Turist extends Persoana {
     private boolean esteIncepator;
     public Turist(){}
 
-    public Turist(String nume, int varsta) {
-        super(nume, varsta);
-    }
-
     public boolean isEsteIncepator() {
         return esteIncepator;
+    }
+
+    public Turist(String nume, int varsta, boolean esteIncepator) {
+        super(nume, varsta);
+        this.esteIncepator = esteIncepator;
+    }
+
+    public Turist(boolean esteIncepator) {
+        this.esteIncepator = esteIncepator;
     }
 
     public void setEsteIncepator(boolean esteIncepator) {
         this.esteIncepator = esteIncepator;
     }
 
+
+
     @Override
     public String toString() {
         return "Turist{" +
-                "esteIncepator=" + esteIncepator +
-                ", nume=" + getNume() +
-                ", varsta=" +getVarsta() +
+                "nume=" + getNume() +
+                ", esteIncepator=" + esteIncepator +
+                ", varsta=" + getVarsta() +
                 '}';
     }
 }

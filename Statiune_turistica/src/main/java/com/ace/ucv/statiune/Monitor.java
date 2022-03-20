@@ -8,7 +8,6 @@ public class Monitor extends Persoana {
     public Monitor() {
     }
 
-
     @Override
     public String toString() {
         return "Persoana{" +

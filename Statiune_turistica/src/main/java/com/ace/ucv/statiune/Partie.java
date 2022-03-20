@@ -1,10 +1,30 @@
 package com.ace.ucv.statiune;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Partie {
     private String tip;
+    private Integer numarPatinoare;
+    private Integer numarMonitori;
     private List<Sport> sporturi;
+
+    public Integer getNumarPatinoare() {
+        return numarPatinoare;
+    }
+
+    public void setNumarPatinoare(Integer numarPatinoare) {
+        this.numarPatinoare = numarPatinoare;
+    }
+
+    public Integer getNumarMonitori() {
+        return numarMonitori;
+    }
+
+    public void setNumarMonitori(Integer numarMonitori) {
+        this.numarMonitori = numarMonitori;
+    }
+
     public Partie(){}
 
     public String getTip() {
@@ -23,8 +43,10 @@ public class Partie {
         this.sporturi = sporturi;
     }
 
-    public Partie(String tip, List<Sport> sporturi) {
+    public Partie(String tip, Integer numarPatinoare, Integer numarMonitori, List<Sport> sporturi) {
         this.tip = tip;
+        this.numarPatinoare = numarPatinoare;
+        this.numarMonitori = numarMonitori;
         this.sporturi = sporturi;
     }
 
@@ -33,6 +55,14 @@ public class Partie {
         return "Partie{" +
                 "tip='" + tip + '\'' +
                 ", sporturi=" + sporturi +
+                ", numar patinoare=" + numarPatinoare +
+                ", numar monitori=" + numarMonitori +
                 '}';
     }
+
+
+
+
+
+
 }

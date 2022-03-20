@@ -1,10 +1,11 @@
 package com.ace.ucv.statiune;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Statiune {
-    private List<Partie> partii;
-    private List<Cazare> cazari;
+    private List<Partie> partii = new ArrayList<>();
+    private List<Cazare> cazari = new ArrayList<>();
 
     public Statiune() {
     }
@@ -37,5 +38,8 @@ public class Statiune {
                 ", cazari=" + cazari +
                 '}';
     }
+
+
+
 }
 

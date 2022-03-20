@@ -5,8 +5,6 @@ import java.util.stream.Collectors;
 
 public class Sport {
     private String nume;
-    private List<Turist> turisti;
-
 
     public String getNume() {
         return nume;
@@ -16,20 +14,11 @@ public class Sport {
         this.nume = nume;
     }
 
-    public List<Turist> getTuristi() {
-        return turisti;
-    }
-
-    public void setTuristi(List<Turist> turisti) {
-        this.turisti = turisti;
-    }
-
     public Sport() {
     }
 
-    public Sport(String nume, List<Turist> turisti) {
+    public Sport(String nume) {
         this.nume = nume;
-        this.turisti = turisti;
 
     }
 
@@ -38,7 +27,6 @@ public class Sport {
     public String toString() {
         return "Sport{" +
                 "nume='" + nume + '\'' +
-                ",turisti=" +   turisti +
                 '}';
     }
 }
