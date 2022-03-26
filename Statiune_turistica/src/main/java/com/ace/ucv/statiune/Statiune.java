@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Statiune {
+    private static Statiune statiune = null;
     private List<Partie> partii = new ArrayList<>();
     private List<Cazare> cazari = new ArrayList<>();
 
-    public Statiune() {
+    private Statiune() {
     }
 
-    public Statiune(List<Partie> partii, List<Cazare> cazari) {
-        this.partii = partii;
-        this.cazari = cazari;
+    public static Statiune getInstance() {
+        //se verifica daca statiunea a fost initializata
+        if (statiune == null) {
+            statiune = new Statiune();
+        }
+        return statiune;
     }
 
     public List<Partie> getPartii() {
@@ -31,6 +35,7 @@ public class Statiune {
         this.cazari = cazari;
     }
 
+
     @Override
     public String toString() {
         return "Statiune{" +
@@ -38,7 +43,6 @@ public class Statiune {
                 ", cazari=" + cazari +
                 '}';
     }
-
 
 
 }

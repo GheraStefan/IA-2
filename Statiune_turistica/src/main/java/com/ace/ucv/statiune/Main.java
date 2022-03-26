@@ -3,7 +3,7 @@ package com.ace.ucv.statiune;
 public class Main {
     public static void main(String[] args) {
         Aplicatie aplicatie = new Aplicatie();
-        Statiune statiune = new Statiune();
+        Statiune statiune = Statiune.getInstance();
         Studiu studiu = new Studiu(statiune);
         System.out.println();
         int input;
