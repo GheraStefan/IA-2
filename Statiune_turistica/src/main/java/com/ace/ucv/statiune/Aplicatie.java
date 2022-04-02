@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Aplicatie {
     Scanner scanner = new Scanner(System.in);
     String nume = "";
+    SportFactory sportFactory = new SportFactory();
 
     public Turist creazaTurist() {
         String input;
@@ -28,21 +29,19 @@ public class Aplicatie {
         return new Turist(nume, varsta, incepator);
     }
 
-    public Sport createSport() {
+    public SportBuilder.Sport createSport() {
         Scanner in = new Scanner(System.in);
-        String name;
+        System.out.println("Sporturi disponibile: \n1.Patinaj\n2.Schi");
+        int option = in.nextInt();
 
-        System.out.println("Numele sportului:");
-        name = in.nextLine();
-
-        return new Sport(name);
+        return sportFactory.getSport(option);
     }
 
     public Partie createPartie() {
         String tip;
-        Integer numarPatinoare;
-        Integer numarMonitori;
-        Integer numarSporturi;
+        int numarPatinoare;
+        int numarMonitori;
+        int numarSporturi;
 
         System.out.print("Tipul partiei:");
         tip = scanner.next();
@@ -53,12 +52,12 @@ public class Aplicatie {
         System.out.print("Cate sporturi se practica ?");
         numarSporturi = scanner.nextInt();
 
-            List<Sport> sporturi = new ArrayList<>();
+            List<SportBuilder.Sport> sporturi = new ArrayList<>();
             for (int i = 0; i < numarSporturi; i++) {
-                Sport sport = createSport();
+                SportBuilder.Sport sport = createSport();
                 sporturi.add(sport);
             }
-        return new Partie(tip, numarPatinoare, numarMonitori,sporturi);
+        return new Partie(tip, numarPatinoare, numarMonitori, sporturi);
     }
 
     public Cazare createCazare() {

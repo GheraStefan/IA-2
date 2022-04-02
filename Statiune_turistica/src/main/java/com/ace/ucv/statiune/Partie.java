@@ -1,13 +1,12 @@
 package com.ace.ucv.statiune;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Partie {
     private String tip;
     private Integer numarPatinoare;
     private Integer numarMonitori;
-    private List<Sport> sporturi;
+    private List<SportBuilder.Sport> sporturi;
 
     public Integer getNumarPatinoare() {
         return numarPatinoare;
@@ -35,15 +34,15 @@ public class Partie {
         this.tip = tip;
     }
 
-    public List<Sport> getSporturi() {
+    public List<SportBuilder.Sport> getSporturi() {
         return sporturi;
     }
 
-    public void setSporturi(List<Sport> sporturi) {
+    public void setSporturi(List<SportBuilder.Sport> sporturi) {
         this.sporturi = sporturi;
     }
 
-    public Partie(String tip, Integer numarPatinoare, Integer numarMonitori, List<Sport> sporturi) {
+    public Partie(String tip, Integer numarPatinoare, Integer numarMonitori, List<SportBuilder.Sport> sporturi) {
         this.tip = tip;
         this.numarPatinoare = numarPatinoare;
         this.numarMonitori = numarMonitori;
