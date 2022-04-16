@@ -1,11 +1,19 @@
 package com.ace.ucv.statiune;
 
-public class Main {
-    public static void main(String[] args) {
-        /*Aplicatie aplicatie = new Aplicatie();
-        Statiune statiune = Statiune.getInstance();
-        Studiu studiu = new Studiu(statiune);
-        System.out.println();
+public class FacadeStatiune {
+    Statiune statiune;
+    Aplicatie aplicatie;
+    Studiu studiu;
+
+    public FacadeStatiune(Statiune s)
+    {
+        statiune = s;
+        aplicatie = new Aplicatie();
+        studiu = new Studiu(statiune);
+    }
+
+    public Statiune creare_statiune()
+    {
         int input;
 
         do {
@@ -34,10 +42,8 @@ public class Main {
                     System.out.println(studiu);
                     break;
             }
-        } while (input != 0);*/
+        } while (input != 0);
 
-        Statiune statiune = Statiune.getInstance();
-        FacadeStatiune Facade = new FacadeStatiune(statiune);
-        Facade.creare_statiune();
+        return statiune;
     }
 }
